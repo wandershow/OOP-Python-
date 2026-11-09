@@ -1,3 +1,7 @@
+from rich import print
+import time
+
+
 class Livro:
     def __init__(self, titulo, quantidade_paginas):
         self.titulo = titulo
@@ -10,13 +14,15 @@ class Livro:
                 print("Você chegou ao fim do livro!")
                 break
             self.pagina += 1
-            print(f"Página {self.pagina}")
+            time.sleep(0.2)
+
+            print(f"Página {self.pagina} :arrow_forward: ", end="")
 
     def __str__(self):
         return f"Você acabou de abrir o livro {self.titulo} que tem {self.quantidade_paginas} paginas"
 
 
-l1 = Livro("10 coisas que eu aprendi", 20)
+l1 = Livro("10 coisas que eu aprendi", 80)
 l1.avancar(5)
 l1.avancar(10)
 l1.avancar(100)
