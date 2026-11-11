@@ -1,4 +1,4 @@
-from rich import print, inspect
+
 from abc import ABC, abstractmethod
 
 
