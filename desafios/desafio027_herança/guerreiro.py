@@ -1,4 +1,5 @@
 from personagem import Personagem
+import random
 
 
 class Guerreiro(Personagem):
@@ -7,4 +8,13 @@ class Guerreiro(Personagem):
         super().__init__(nome, vida, ["Espadada", "Golpe de escudo", "Investida"])
 
     def curar(self):
-        ...  # você implementa
+        if not self.esta_vivo():
+            print(f"{self.nome} faleceu impossivel curar!")
+            return
+        vida_antes = self.vida
+        cura = random.randint(100, 300)
+        self.vida = min(self.vida + cura, self.vida_maxima)
+        recuperado = self.vida - vida_antes
+        print(
+            f"{self.nome} usou uma poção para se curar de {recuperado}. Vida: {self.vida}/{self.vida_maxima}"
+        )
