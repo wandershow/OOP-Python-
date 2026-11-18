@@ -12,9 +12,9 @@ class Mago(Personagem):
             print(f"{self.nome} faleceu impossivel curar!")
             return
         vida_antes = self.vida
-        cura = random.randomint(300, 600)
-        self.vida = (self.vida + cura, self.vida_maxima)
+        cura = random.randint(300, 600)
+        self.vida = min(self.vida + cura, self.vida_maxima)
         recuperado = self.vida - vida_antes
         print(
-            f"{self.nome} usou uma poção para se curar de {recuperado}. Vida: {self.vida}/{self.vida_maxima}"
+            f"{self.nome} usou uma magia para se curar de {recuperado}. Vida: {self.vida}/{self.vida_maxima}"
         )

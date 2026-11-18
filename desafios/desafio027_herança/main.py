@@ -12,6 +12,8 @@ def main():
     p2.curar()
     p2.atacar(p1, 2000)
 
+    p1.curar()
+
 
 if __name__ == "__main__":
     main()
